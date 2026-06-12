@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Monitoring Konten Cabang</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section id="loginPage" class="login-page">
+    <div class="login-card">
+      <h1>Monitoring Konten</h1>
+      <p>Kampung Inggris Pontianak</p>
+
+      <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Masukkan username" required />
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Masukkan password" required />
+
+        <button type="submit">Masuk</button>
+      </form>
+
+      <p id="loginMessage" class="message"></p>
+    </div>
+  </section>
+
+  <section id="dashboardPage" class="dashboard hidden">
+    <header class="topbar">
+      <div>
+        <h1>Dashboard Monitoring Konten</h1>
+        <p>Kampung Inggris Pontianak</p>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+
+    <main class="container">
+      <div class="filter-card">
+        <div>
+          <label>Pilih Tanggal</label>
+          <input type="date" id="tanggalInput" />
+        </div>
+
+        <button id="loadBtn">Tampilkan Data</button>
+      </div>
+
+      <div class="summary">
+        <div class="summary-card">
+          <h3>Total Cabang</h3>
+          <p id="totalCabang">0</p>
+        </div>
+
+        <div class="summary-card">
+          <h3>Sudah Upload</h3>
+          <p id="sudahUpload">0</p>
+        </div>
+
+        <div class="summary-card">
+          <h3>Belum Upload</h3>
+          <p id="belumUpload">0</p>
+        </div>
+      </div>
+
+      <div id="contentList" class="content-list"></div>
+
+      <p id="dashboardMessage" class="message"></p>
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
