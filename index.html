@@ -10,65 +10,144 @@
 </head>
 <body>
 
+  <!-- HALAMAN LOGIN -->
   <section id="loginPage" class="login-page">
-    <div class="login-card">
-      <h1>Monitoring Konten</h1>
-      <p>Kampung Inggris Pontianak</p>
+    <div class="color-blob blob-1"></div>
+    <div class="color-blob blob-2"></div>
+    <div class="color-blob blob-3"></div>
+    <div class="color-blob blob-4"></div>
 
-      <form id="loginForm">
-        <label>Username</label>
-        <input type="text" id="username" placeholder="Masukkan username" required />
+    <div class="login-wrapper">
+      <div class="login-info">
+        <div class="app-badge">Content Monitoring System</div>
 
-        <label>Password</label>
-        <input type="password" id="password" placeholder="Masukkan password" required />
+        <h1>Monitoring Konten Harian Cabang</h1>
 
-        <button type="submit">Masuk</button>
-      </form>
+        <p>
+          Sistem sederhana untuk memantau progres upload konten harian
+          setiap cabang Kampung Inggris Pontianak.
+        </p>
 
-      <p id="loginMessage" class="message"></p>
+        <div class="info-grid">
+          <div class="info-card blue">
+            <h3>8</h3>
+            <span>Cabang</span>
+          </div>
+
+          <div class="info-card green">
+            <h3>Daily</h3>
+            <span>Update</span>
+          </div>
+
+          <div class="info-card orange">
+            <h3>Sheet</h3>
+            <span>Database</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-card">
+        <div class="logo-box">
+          <img src="logo.png" alt="Logo Kampung Inggris Pontianak">
+        </div>
+
+        <h2>Masuk Dashboard</h2>
+        <p class="login-subtitle">Gunakan akun admin untuk mulai monitoring.</p>
+
+        <form id="loginForm">
+          <label>Username</label>
+          <input type="text" id="username" placeholder="Masukkan username" required />
+
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Masukkan password" required />
+
+          <button type="submit">Login Sekarang</button>
+        </form>
+
+        <p id="loginMessage" class="message"></p>
+      </div>
     </div>
   </section>
 
+  <!-- HALAMAN DASHBOARD -->
   <section id="dashboardPage" class="dashboard hidden">
     <header class="topbar">
-      <div>
-        <h1>Dashboard Monitoring Konten</h1>
-        <p>Kampung Inggris Pontianak</p>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+
+        <div>
+          <h1>Monitoring Konten</h1>
+          <p>Kampung Inggris Pontianak</p>
+        </div>
       </div>
 
       <button id="logoutBtn" class="logout-btn">Logout</button>
     </header>
 
     <main class="container">
-      <div class="filter-card">
-        <div>
-          <label>Pilih Tanggal</label>
+      <section class="dashboard-hero">
+        <div class="hero-text">
+          <span>Dashboard Monitoring Harian</span>
+          <h2>Pantau Upload Konten Percabang</h2>
+          <p>
+            Cek status konten harian seluruh cabang secara cepat,
+            rapi, dan terpusat dalam satu dashboard.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-dot"></div>
+          <h3>Live Monitoring</h3>
+          <p>Data tersimpan otomatis ke Google Spreadsheet.</p>
+        </div>
+      </section>
+
+      <section class="filter-card">
+        <div class="date-area">
+          <label>Pilih Tanggal Monitoring</label>
           <input type="date" id="tanggalInput" />
         </div>
 
         <button id="loadBtn">Tampilkan Data</button>
-      </div>
+      </section>
 
-      <div class="summary">
-        <div class="summary-card">
-          <h3>Total Cabang</h3>
-          <p id="totalCabang">0</p>
+      <section class="summary">
+        <div class="summary-card total">
+          <div class="summary-icon">🏢</div>
+          <span>Total Cabang</span>
+          <h3 id="totalCabang">0</h3>
+          <p>Cabang terdaftar</p>
         </div>
 
-        <div class="summary-card">
-          <h3>Sudah Upload</h3>
-          <p id="sudahUpload">0</p>
+        <div class="summary-card success">
+          <div class="summary-icon">✅</div>
+          <span>Sudah Upload</span>
+          <h3 id="sudahUpload">0</h3>
+          <p>Konten sudah selesai</p>
         </div>
 
-        <div class="summary-card">
-          <h3>Belum Upload</h3>
-          <p id="belumUpload">0</p>
+        <div class="summary-card danger">
+          <div class="summary-icon">⏳</div>
+          <span>Belum Upload</span>
+          <h3 id="belumUpload">0</h3>
+          <p>Masih perlu dipantau</p>
         </div>
-      </div>
+      </section>
 
-      <div id="contentList" class="content-list"></div>
+      <section class="monitoring-section">
+        <div class="section-title">
+          <div>
+            <h2>Daftar Cabang</h2>
+            <p>Status upload konten berdasarkan tanggal yang dipilih.</p>
+          </div>
+        </div>
 
-      <p id="dashboardMessage" class="message"></p>
+        <div id="contentList" class="content-list"></div>
+      </section>
+
+      <p id="dashboardMessage" class="message dashboard-msg"></p>
     </main>
   </section>
 
